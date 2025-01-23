@@ -1,11 +1,20 @@
 import { useState } from "react"
 
+function init() {
+    console.log("init was execute")
+    return Math.random()
+}
 export default function Counter(){
-    let[count, setCount]=useState(0)
+    
+
+    let[count, setCount]=useState(init)
+    console.log("component was re rendered");
     
     function incCounter(){
-        setCount(count+1)
-        console.log(count)
+        setCount((curVal)=>{
+           return curVal+1
+        })
+        // setCount(143)
     }
     return(
         <>
