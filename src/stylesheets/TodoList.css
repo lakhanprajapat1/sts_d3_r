@@ -1,0 +1,14 @@
+input{
+    padding: 8px 20px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+ul{
+    font-size: 30px;
+}
+h2{
+    display: inline-block;
+    margin-top: 40px;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+}

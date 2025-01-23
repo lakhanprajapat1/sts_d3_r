@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import './stylesheets/TodoList.css'
 
 const TodoList = () => {
   let [todos, settodos] = useState([]);
@@ -7,6 +8,7 @@ const TodoList = () => {
 
   let addNewTask = () => {
     settodos([...todos, newTodo])
+    setnewTodo("")
   };
 
   let updateTodoValues = (event) => {
@@ -26,6 +28,7 @@ const TodoList = () => {
       <button onClick={addNewTask}>Add Task</button>
       <br></br>
       <br></br>
+      <hr />
       <h2>Todo Tasks</h2>
       <ul>
         {todos.map((e) => { return <li type="none">{e}</li>;  })}
