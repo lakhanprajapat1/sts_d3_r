@@ -1,11 +1,13 @@
 import './App.css'
+import Counter from './Counter.jsx'
+import Like from './Like.jsx'
 import LudoBoard from './LudoBoard.jsx'
+import TodoList from './TodoList.jsx'
 
 function App() {
   return (
     <>
-      <h2>Ludo Board</h2>
-      <LudoBoard/>
+      <TodoList/>
     </>
   )
 }
