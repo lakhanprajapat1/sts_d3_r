@@ -1,19 +1,30 @@
 import React from "react";
 import { useState } from "react";
-import './stylesheets/TodoList.css'
+import "./stylesheets/TodoList.css";
+import { v4 as uuidv4 } from "uuid";
 
 const TodoList = () => {
-  let [todos, settodos] = useState([]);
-  let [newTodo, setnewTodo] = useState([""]);
+  let [todos, settodos] = useState([{ task: "sample Task", id: uuidv4() }]);
+  let [newTodo, setnewTodo] = useState("");
 
   let addNewTask = () => {
-    settodos([...todos, newTodo])
-    setnewTodo("")
+    settodos((preValue) => {
+      return [...preValue, { task: newTodo, id: uuidv4() }];
+    });
+    setnewTodo("");
   };
 
   let updateTodoValues = (event) => {
     setnewTodo(event.target.value);
   };
+
+  let deleteTask = (id) => {
+    settodos((preTodos) => todos.filter((preTodos) => preTodos.id != id));
+  };
+
+  let changeAll= ()=>{
+    
+  }
   return (
     <div>
       <h1>TodoList</h1>
@@ -31,7 +42,15 @@ const TodoList = () => {
       <hr />
       <h2>Todo Tasks</h2>
       <ul>
-        {todos.map((e) => { return <li type="none">{e}</li>;  })}
+        {todos.map((todo) => {
+          return (
+            <li key={todo.id} type="none">
+              <span>{todo.task}</span>
+              &nbsp;
+              <button onClick={() => deleteTask(todo.id)}>Delete</button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
