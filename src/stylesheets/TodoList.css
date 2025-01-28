@@ -1,3 +1,10 @@
+.container{
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: #ffff;
+}
 input{
     padding: 8px 20px;
     margin-right: 10px;
@@ -11,4 +18,9 @@ h2{
     margin-top: 40px;
     border-bottom: 2px solid gray;
     padding-bottom: 5px;
+}
+.input-div{
+    width: 100%;
+    height: auto;
+    background-color: aquamarine;
 }
