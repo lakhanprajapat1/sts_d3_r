@@ -1,26 +1,122 @@
 .container{
     height: auto;
-    width: 100%;
-    background-color: transparent;
-    border: 1px solid white;
+    width: 50vw;
     color: #ffff;
-}
-input{
-    padding: 8px 20px;
-    margin-right: 10px;
-    font-size: 20px;
+    box-shadow: 0 0 20px gray;
+    background-color: rgba(255, 255, 255, 0.454);
+    color: black;
+    padding: 5vh 5vw;
+    border-radius: 12px;
 }
 ul{
     font-size: 30px;
 }
+h1{
+    text-align: center;
+    font-weight: 700;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 h2{
-    display: inline-block;
     margin-top: 40px;
     border-bottom: 2px solid gray;
     padding-bottom: 5px;
+    height: 7vh;
+}
+h2 img{
+    height: 100%;
 }
 .input-div{
-    width: 100%;
+    width: 90%;
     height: auto;
-    background-color: aquamarine;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.input-div input{
+    width: 100%;
+    height: 30px;
+    padding:0  10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.input-div button{
+    width:100%;
+    height: 30px;
+    font-size: 18px;
+    background-color: rgba(78, 90, 230, 0.767);
+    border:none;
+    border-radius: 5px;
+}
+.input-div button:hover{
+    background-color: rgba(30, 38, 122, 0.822);
+    color: #ffff;
+}
+
+ul{
+    list-style: square;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    list-style: square;
+}
+li span{
+    color:black;
+}
+li .right-button{
+    width: 40%;
+}
+.right-button button{
+    width: 45%;
+    margin-left: 5%;
+    font-size: 1.5vw;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+.done-btn{
+    background-color: #28A745;
+    color: #ffff;
+}
+.done-btn:hover, .all-done-btn:hover{
+    background-color: #218838;
+}
+.delete-btn{
+    background-color: #C1272D;
+    color: #ffff;
+}
+.delete-btn:hover{
+    background-color: #A12225;
+}
+button:hover{
+    cursor: pointer;
+}
+.all-done-btn{
+    background-color:  #28A745;
+    font-size: 1.5vw;
+    color: #ffff;
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 8vh;
+}
+@media (max-width:999px) {
+    .container{
+        width: 80vw;
+    }
+    .right-button{
+        display: flex;
+        flex-direction: column;
+    }
+    .right-button button{
+        width: 100%;
+        font-size: 4vw;
+        margin-top: 5%;
+    }
+    .all-done-btn{
+        font-size: 4vw;
+    }
 }

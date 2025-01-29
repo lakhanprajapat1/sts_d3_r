@@ -11,7 +11,11 @@ const TodoList = () => {
 
   let addNewTask = () => {
     settodos((preValue) => {
-      return [...preValue, { task: newTodo, id: uuidv4(), isTrue: false }];
+      if(newTodo.length == 0){
+        return preValue;
+      }else{
+        return [...preValue, { task: newTodo, id: uuidv4(), isTrue: false }];
+      }
     });
     setnewTodo("");
   };
@@ -61,37 +65,31 @@ const TodoList = () => {
             value={newTodo}
             onChange={updateTodoValues}
           />
-        </label>
+        </label> <br></br>
         <button className="add-task" onClick={addNewTask}>Add Task</button>
       </div>
       <br></br>
       <br></br>
       <hr />
-      <h2>Todo Tasks</h2>
-      <ul>
+      <h2><img src="https://w7.pngwing.com/pngs/185/850/png-transparent-task-computer-icons-tasks-s-angle-text-microsoft-office-thumbnail.png" alt="" /> Tasks</h2>
+      <ul className="list-box">
         {todos.map((todo) => {
           return (
-            <li key={todo.id} type="none">
+            <li key={todo.id}>
               <span
                 style={
                   todo.isDone
-                    ? { textDecoration: "line-through", color: "gray" }
+                    ? { textDecoration: "line-through", color:"#7d7d7d" }
                     : {}
                 }
               >
                 {todo.task}
               </span>
               &nbsp;
-              <button className="done-btn" onClick={() => markAsDone(todo.id)}>
-                {" "}
-                Done
-              </button>
-              <button
-                className="delete-btn"
-                onClick={() => deleteTask(todo.id)}
-              >
-                Delete
-              </button>
+              <div className="right-button">
+              <button className="done-btn" onClick={() => markAsDone(todo.id)}>Done</button>
+              <button className="delete-btn" onClick={() => deleteTask(todo.id)}>Delete</button>
+              </div>
             </li>
           );
         })}
